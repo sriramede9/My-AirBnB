@@ -10,7 +10,7 @@ import { NavController } from "@ionic/angular";
   styleUrls: ["./place-detail.page.scss"],
 })
 export class PlaceDetailPage implements OnInit {
-  loadPlaceById: any;
+  loadPlaceById: Place;
   constructor(
     private activateRoute: ActivatedRoute,
     private placeService: PlacesService,
@@ -20,8 +20,8 @@ export class PlaceDetailPage implements OnInit {
 
   ngOnInit() {
     this.activateRoute.params.subscribe((params) => {
-      this.loadPlaceById = this.placeService.getPlaceById(params["placeId"]);
-      // console.log(this.loadPlaceById);
+      this.loadPlaceById = this.placeService.getPlace(params["placeId"]);
+      // console.log(this.loadPlaceById.id);
     });
   }
 

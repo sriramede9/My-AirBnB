@@ -29,14 +29,39 @@ export class PlacesService {
     ),
   ];
 
+  // private places: Place[] = [
+  //   {
+  //     id: "pone",
+  //     title: "Toronto",
+  //     description: "Hub for Industries",
+  //     imageUrl:
+  //       "https://cdn.pixabay.com/photo/2017/05/09/03/47/buildings-2297210_1280.jpg",
+  //     price: 400000,
+  //   },
+  //   {
+  //     id: "Ptwo",
+  //     title: "Montreal",
+  //     description: "French County",
+  //     imageUrl:
+  //       "https://cdn.pixabay.com/photo/2014/01/19/00/25/montreal-247795_1280.jpg",
+  //     price: 600000,
+  //   },
+  //   {
+  //     id: "Pthree",
+  //     title: "Vancouver",
+  //     description: "Fish and explore",
+  //     imageUrl:
+  //       "https://cdn.pixabay.com/photo/2015/05/05/17/56/vancouver-754204_1280.jpg",
+  //     price: 500000,
+  //   },
+  // ];
+
   getPlaces() {
     return [...this.places];
   }
 
-  getPlaceById(id: string) {
-    return this.places.filter((p) => {
-      return p.id === id;
-    });
+  getPlace(id: string) {
+    return { ...this.places.find((p) => p.id === id) };
   }
 
   constructor() {}
